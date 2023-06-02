@@ -19,6 +19,7 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
 }
 
+//kodadki apileri tarayip buluyo
     //@Bean
 //   public Docket api() {
 //        return new Docket(DocumentationType.SWAGGER_2)
@@ -28,3 +29,8 @@ public class DemoApplication {
 //    }
 
 }
+
+
+
+
+// katmanlar arasinda bagimlilik kurarken interfacelerini constructora veririz

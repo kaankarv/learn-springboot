@@ -1,5 +1,6 @@
 package learnsb.demo.core.utilities.results;
 
+//ne dondurecegimiz belli olmadigi icin generic <T>
 public class DataResult<T> extends Result{
 
     private T data;
