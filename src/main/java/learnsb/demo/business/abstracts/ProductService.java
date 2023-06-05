@@ -12,6 +12,10 @@ public interface ProductService {
     //bu ikisi zaten jpa repositorynin icinde default geliyo findall ve save olarak
     DataResult<List<Product>> getAll();
 
+    //sayfalama
+    DataResult<List<Product>> getAll(int pageNo, int pageSize);
+    DataResult<List<Product>> getAllSorted();
+
     Result add(Product product);
 
 
