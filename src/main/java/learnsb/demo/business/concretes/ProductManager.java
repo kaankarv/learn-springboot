@@ -8,12 +8,12 @@ import learnsb.demo.core.utilities.results.SuccessResult;
 import learnsb.demo.dataAccess.abstracts.ProductDao;
 import learnsb.demo.entities.concretes.Product;
 
+import learnsb.demo.entities.dtos.ProductWithCategoryDto;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -88,6 +88,11 @@ public class ProductManager implements ProductService {
     @Override
     public DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId) {
         return new SuccesDataResult<List<Product>>(this.productDao.getByNameAndCategory(productName, categoryId), " Data listelendi");
+    }
+
+    @Override
+    public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
+        return new SuccesDataResult<List<ProductWithCategoryDto>>(this.productDao.getProductWithCategoryDetails(),"data listelendi");
     }
 
 }

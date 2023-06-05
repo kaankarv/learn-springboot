@@ -5,7 +5,7 @@ import learnsb.demo.business.abstracts.ProductService;
 import learnsb.demo.core.utilities.results.DataResult;
 import learnsb.demo.core.utilities.results.Result;
 import learnsb.demo.entities.concretes.Product;
-import org.springframework.beans.factory.annotation.Autowired;
+import learnsb.demo.entities.dtos.ProductWithCategoryDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,9 +15,8 @@ import java.util.List;
 public class ProductsController {
 
 
-    private  ProductService productService;
+    private final ProductService productService;
 
-    @Autowired
     public ProductsController(ProductService productService) {
         super();
         this.productService = productService;
@@ -37,6 +36,10 @@ public class ProductsController {
     @GetMapping("/getAllDesc")
     public DataResult<List<Product>> getAllSorted(){
         return this.productService.getAllSorted();
+    }
+    @GetMapping("/getProductWithCategoryDetails")
+    public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails(){
+        return this.productService.getProductWithCategoryDetails();
     }
 
     @PostMapping("/add")

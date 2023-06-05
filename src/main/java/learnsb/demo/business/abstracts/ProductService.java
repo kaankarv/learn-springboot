@@ -3,6 +3,7 @@ package learnsb.demo.business.abstracts;
 import learnsb.demo.core.utilities.results.DataResult;
 import learnsb.demo.core.utilities.results.Result;
 import learnsb.demo.entities.concretes.Product;
+import learnsb.demo.entities.dtos.ProductWithCategoryDto;
 import lombok.Data;
 import org.springframework.data.jpa.repository.Query;
 
@@ -33,4 +34,6 @@ public interface ProductService {
     DataResult<List<Product>> getByProductNameStartsWith(String productName);
 
     DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
+
+    DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
 }
