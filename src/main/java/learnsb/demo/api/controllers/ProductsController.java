@@ -44,9 +44,7 @@ public class ProductsController {
 
     @PostMapping("/add")
     public Result add(@RequestBody Product product){
-
         return this.productService.add(product);
-
     }
 
     @GetMapping("/getByProductName")

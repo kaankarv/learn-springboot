@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface ProductService {
-    //bu ikisi zaten jpa repositorynin icinde default geliyo findall ve save olarak
+    //bu ikisi zaten jpa repositorynin icinde default geliyo findall(getall) ve save(add) olarak
     DataResult<List<Product>> getAll();
 
     //sayfalama
